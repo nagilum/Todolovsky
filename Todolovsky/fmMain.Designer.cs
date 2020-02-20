@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmMain));
             this.lvTasks = new System.Windows.Forms.ListView();
-            this.tbNewTask = new System.Windows.Forms.TextBox();
             this.chText = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDueDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tbNewTask = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lvTasks
@@ -40,27 +40,19 @@
             this.lvTasks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.lvTasks.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvTasks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chText,
             this.chDueDate});
             this.lvTasks.FullRowSelect = true;
             this.lvTasks.HideSelection = false;
-            this.lvTasks.Location = new System.Drawing.Point(12, 12);
+            this.lvTasks.Location = new System.Drawing.Point(0, 0);
             this.lvTasks.MultiSelect = false;
             this.lvTasks.Name = "lvTasks";
-            this.lvTasks.Size = new System.Drawing.Size(586, 393);
+            this.lvTasks.Size = new System.Drawing.Size(573, 440);
             this.lvTasks.TabIndex = 1;
             this.lvTasks.UseCompatibleStateImageBehavior = false;
             this.lvTasks.View = System.Windows.Forms.View.Details;
-            // 
-            // tbNewTask
-            // 
-            this.tbNewTask.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbNewTask.Location = new System.Drawing.Point(12, 411);
-            this.tbNewTask.Name = "tbNewTask";
-            this.tbNewTask.Size = new System.Drawing.Size(586, 20);
-            this.tbNewTask.TabIndex = 0;
             // 
             // chText
             // 
@@ -70,11 +62,23 @@
             // 
             this.chDueDate.Text = "Due";
             // 
+            // tbNewTask
+            // 
+            this.tbNewTask.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbNewTask.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbNewTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNewTask.Location = new System.Drawing.Point(5, 446);
+            this.tbNewTask.Name = "tbNewTask";
+            this.tbNewTask.Size = new System.Drawing.Size(563, 19);
+            this.tbNewTask.TabIndex = 0;
+            // 
             // fmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(610, 443);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(573, 471);
             this.Controls.Add(this.tbNewTask);
             this.Controls.Add(this.lvTasks);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
