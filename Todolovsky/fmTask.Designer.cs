@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmTask));
             this.tbText = new System.Windows.Forms.TextBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.lbDueDate = new System.Windows.Forms.Label();
             this.btSetDueDate = new System.Windows.Forms.Button();
             this.btSave = new System.Windows.Forms.Button();
             this.btDelete = new System.Windows.Forms.Button();
@@ -49,6 +50,15 @@
             this.tbText.Name = "tbText";
             this.tbText.Size = new System.Drawing.Size(455, 156);
             this.tbText.TabIndex = 6;
+            // 
+            // lbDueDate
+            // 
+            this.lbDueDate.Location = new System.Drawing.Point(341, 5);
+            this.lbDueDate.Name = "lbDueDate";
+            this.lbDueDate.Size = new System.Drawing.Size(120, 21);
+            this.lbDueDate.TabIndex = 9;
+            this.lbDueDate.Text = "DueDate";
+            this.lbDueDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // btSetDueDate
             // 
@@ -100,6 +110,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(466, 207);
+            this.Controls.Add(this.lbDueDate);
             this.Controls.Add(this.btSetDueDate);
             this.Controls.Add(this.tbText);
             this.Controls.Add(this.btSave);
@@ -121,5 +132,6 @@
         private System.Windows.Forms.TextBox tbText;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.Button btSetDueDate;
+        private System.Windows.Forms.Label lbDueDate;
     }
 }

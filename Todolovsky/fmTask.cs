@@ -28,7 +28,15 @@ namespace Todolovsky {
         /// Update the UI with task properties.
         /// </summary>
         public void UpdateTaskUi() {
+            // Text
             this.tbText.Text = this.Task.Text;
+
+            // Due date.
+            this.lbDueDate.Text = this.Task.Due.HasValue
+                ? string.Format(
+                    "Due: {0}",
+                    this.Task.Due.Value.ToString("yyyy-MM-dd"))
+                : null;
         }
 
         /// <summary>
@@ -92,7 +100,23 @@ namespace Todolovsky {
         /// Set due date.
         /// </summary>
         private void btSetDueDate_Click(object sender, EventArgs e) {
-            throw new NotImplementedException();
+            var dlg = new fmCalendar {
+                SelectedDate = this.Task.Due
+            };
+
+            if (dlg.ShowDialog(this) == DialogResult.Cancel) {
+                return;
+            }
+
+            // Set
+            this.Task.Due = dlg.SelectedDate;
+
+            // Preview
+            this.lbDueDate.Text = this.Task.Due.HasValue
+                ? string.Format(
+                    "Due: {0}",
+                    this.Task.Due.Value.ToString("yyyy-MM-dd"))
+                : null;
         }
 
         /// <summary>
