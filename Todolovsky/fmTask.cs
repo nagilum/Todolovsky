@@ -14,9 +14,6 @@ namespace Todolovsky {
         /// </summary>
         public fmTask() {
             InitializeComponent();
-
-            // Set the date-format.
-            this.dtDue.CustomFormat = "yyyy-MM-dd";
         }
 
         /// <summary>
@@ -31,13 +28,6 @@ namespace Todolovsky {
         /// Update the UI with task properties.
         /// </summary>
         public void UpdateTaskUi() {
-            this.lbCreated.Text = this.Task.Created.ToString("yyyy-MM-dd");
-            this.lbUpdated.Text = this.Task.Updated.ToString("yyyy-MM-dd");
-
-            this.dtDue.Value = this.Task.Due.HasValue
-                ? this.Task.Due.Value.DateTime
-                : this.dtDue.MinDate;
-
             this.tbText.Text = this.Task.Text;
         }
 
@@ -47,14 +37,6 @@ namespace Todolovsky {
         private void btSave_Click(object sender, EventArgs e) {
             // Text
             this.Task.Text = this.tbText.Text.Trim();
-
-            // Due
-            if (this.dtDue.Value == this.dtDue.MinDate) {
-                this.Task.Due = null;
-            }
-            else {
-                this.Task.Due = this.dtDue.Value;
-            }
 
             // Initiate save proc.
             this.saveTask();
@@ -104,6 +86,13 @@ namespace Todolovsky {
 
             // Close form.
             this.Close();
+        }
+
+        /// <summary>
+        /// Set due date.
+        /// </summary>
+        private void btSetDueDate_Click(object sender, EventArgs e) {
+            throw new NotImplementedException();
         }
 
         /// <summary>
