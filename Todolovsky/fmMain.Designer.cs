@@ -40,16 +40,16 @@
             this.lvTasks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lvTasks.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lvTasks.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lvTasks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chText,
             this.chDueDate});
             this.lvTasks.FullRowSelect = true;
             this.lvTasks.HideSelection = false;
-            this.lvTasks.Location = new System.Drawing.Point(0, 0);
+            this.lvTasks.Location = new System.Drawing.Point(-1, -1);
             this.lvTasks.MultiSelect = false;
             this.lvTasks.Name = "lvTasks";
-            this.lvTasks.Size = new System.Drawing.Size(573, 440);
+            this.lvTasks.Size = new System.Drawing.Size(575, 440);
             this.lvTasks.TabIndex = 1;
             this.lvTasks.UseCompatibleStateImageBehavior = false;
             this.lvTasks.View = System.Windows.Forms.View.Details;
