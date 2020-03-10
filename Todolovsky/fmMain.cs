@@ -109,10 +109,18 @@ namespace Todolovsky {
 
             var list = TaskHandler.Tasks
                 .Where(n => !n.Deleted.HasValue &&
-                            !n.Completed.HasValue)
-                .OrderByDescending(n => n.Due)
+                            !n.Completed.HasValue &&
+                            n.Due.HasValue)
+                .OrderBy(n => n.Due)
                 .ThenByDescending(n => n.Created)
                 .ToList();
+
+            list.AddRange(TaskHandler.Tasks
+                .Where(n => !n.Deleted.HasValue &&
+                            !n.Completed.HasValue &&
+                            !n.Due.HasValue)
+                .OrderByDescending(n => n.Created)
+                .ToList());
 
             foreach (var task in list) {
                 var item = new ListViewItem {
