@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -121,6 +122,10 @@ namespace Todolovsky {
 
                 if (task.Due.HasValue) {
                     item.SubItems.Add(task.Due.Value.ToString("yyyy-MM-dd"));
+
+                    if (task.Due.Value < DateTimeOffset.Now) {
+                        item.ForeColor = Color.Red;
+                    }
                 }
 
                 this.lvTasks.Items.Add(item);
